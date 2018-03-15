@@ -11,7 +11,9 @@ imshow("MyWindow", img); //Loads img in the window "MyWindow"
 
 # Color Conversion
 OpenCV provides optimized color conversion functions.
+
 Converts RGB image into Gray
+
 cvtColor(src, dst, CV_RGB2GRAY); 
 
 # Blend two images
