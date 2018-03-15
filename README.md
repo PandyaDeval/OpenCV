@@ -36,20 +36,6 @@ aplha>0 and beta is the parameter controlling the contrast/ brightness of an ima
 
 f(x) can be expressed as a 2-D matrix in case of real images.
 
-for( int y = 0; y < image.rows; y++ )
-
-{ for( int x = 0; x < image.cols; x++ )
-
-{ for( int c = 0; c < 3; c++ )
-
-{ new_image.at<Vec3b>(y,x)[c] =
-
-saturate_cast<uchar>( alpha*( image.at<Vec3b>(y,x)[c] ) + beta ); }
-
-}
-
-}
-
 for loops can be used to obtain transformation in pixel values of an image.
 
 image.convertTo(new_image, -1, alpha, beta); //Function which can simply be used instead of for loops.
