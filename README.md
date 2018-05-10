@@ -1,5 +1,5 @@
 # OpenCV
-Trying out basic OpenCV functions including reading, converting and transforming images to obtain the skeleton of an imahge which could be further processesed using various algorithms.
+Trying out basic OpenCV functions including reading, converting and transforming images to obtain the skeleton of an image which could be further processesed using various algorithms.
 Source: OpenCV documentation https://docs.opencv.org/2.4/opencv_tutorials.pdf
 
 # Reading/ Writing an image
