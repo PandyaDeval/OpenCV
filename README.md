@@ -5,20 +5,32 @@ Source: OpenCV documentation https://docs.opencv.org/2.4/opencv_tutorials.pdf
 # Reading/ Writing an image
 An image can be represented as a matrix representing its pixel values.
 
-Mat img = imread("image.jpg", 1); //Creates an object named img of class Mat and loads image.jpg 
+Mat img = cv2.imread("image.jpg", 1); //Creates an object named img of class Mat and loads image.jpg 
+//1 = Color Image
+//0= Grayscale image
+// -1= Image unchanged
 
 Mat is basically a class with two data parts: the matrix header (containing information such as the size of the matrix, the method used for storing, at which address is the matrix stored, and so on) and a pointer to the matrix containing the pixel values (taking any dimensionality depending on the method chosen for storing).
 
-namedWindow("MyWindow", WINDOW_AUTOSIZE); //Creates a window named "MyWindow" 
+cv2.imshow("MyWindow", img); //Loads img in the window "MyWindow"
 
-imshow("MyWindow", img); //Loads img in the window "MyWindow"
+cv2.waitKey(); //imshow works only on inculding this command in your code
+
+# Loading Video Source
+
+cap= cv2.VideoCapture(0); 
+
+while True:
+	ret, frame= cap.read();
+	cv2.imshow('frame', frame);
 
 # Color Conversion
 OpenCV provides optimized color conversion functions.
 
 Converts RGB image into Gray
 
-cvtColor(src, dst, CV_RGB2GRAY); 
+cvtColor(src, dst, CV_RGB2GRAY);
+Other options: CV_RGC2HSV //Used typically for color detection
 
 # Blend two images
 beta = ( 1.0 - alpha );
